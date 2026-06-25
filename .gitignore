@@ -6,10 +6,6 @@ __pycache__/
 *.py[cod]
 *$py.class
 
-#Machine Learning
-*.joblib
-*.pkl
-
 #Logs
 *.log
 app/backend/data/api_logs.txt
