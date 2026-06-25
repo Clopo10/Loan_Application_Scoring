@@ -1,5 +1,6 @@
 #Environments
 .env
+venv/
 
 #Pythoncache
 __pycache__/
@@ -8,7 +9,7 @@ __pycache__/
 
 #Logs
 *.log
-app/backend/data/api_logs.txt
+app/data/api_logs.txt
 
 #OS generated files
 .DS_Store
