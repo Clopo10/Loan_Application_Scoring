@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Loan Evaluator</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body
+    style="background-color: #0b3d26"
+    class="flex items-center justify-center min-h-screen"
+  >
+    <div class="bg-white p-8 rounded-lg shadow-lg max-w-md w-full">
+      <h1 class="text-2xl font-bold text-gray-800 mb-6 text-center">
+        Loan Application
+      </h1>
+
+      <form id="loanForm" class="space-y-4">
+        <div>
+          <label class="block text-sm font-medium text-gray-700">Age</label>
+          <input
+            type="number"
+            min="18"
+            placeholder="Enter your age"
+            id="age"
+            required
+            class="mt-1 block w-full border border-gray-300 rounded-md p-2 focus:ring-blue-500 focus:border-blue-500"
+          />
+        </div>
+
+        <div>
+          <label class="block text-sm font-medium text-gray-700"
+            >Annual Income ($)</label
+          >
+          <input
+            type="number"
+            min="0"
+            placeholder="Enter your annual income"
+            id="income"
+            required
+            class="mt-1 block w-full border border-gray-300 rounded-md p-2 focus:ring-blue-500 focus:border-blue-500"
+          />
+        </div>
+
+        <div>
+          <label class="block text-sm font-medium text-gray-700"
+            >Requested Loan Amount ($)</label
+          >
+          <input
+            type="number"
+            min="0"
+            max="50000"
+            placeholder="Enter the loan amount (up to $50,000)"
+            id="loan_amount"
+            required
+            class="mt-1 block w-full border border-gray-300 rounded-md p-2 focus:ring-blue-500 focus:border-blue-500"
+          />
+        </div>
+
+        <div>
+          <label class="block text-sm font-medium text-gray-700"
+            >Credit Score</label
+          >
+          <input
+            type="number"
+            min="300"
+            max="850"
+            placeholder="Enter your credit score"
+            id="credit_score"
+            required
+            class="mt-1 block w-full border border-gray-300 rounded-md p-2 focus:ring-blue-500 focus:border-blue-500"
+          />
+        </div>
+
+        <button
+          type="submit"
+          class="w-full bg-blue-600 text-white font-bold py-2 px-4 rounded hover:bg-blue-700 transition"
+        >
+          Evaluate Risk
+        </button>
+      </form>
+
+      <div id="resultBox" class="mt-6 p-4 rounded-md hidden">
+        <p class="text-sm text-gray-600 font-semibold">Risk Score:</p>
+        <p id="displayScore" class="text-3xl font-bold mb-2"></p>
+        <p class="text-sm text-gray-600 font-semibold">Decision:</p>
+        <p id="displayCategory" class="text-lg font-bold"></p>
+      </div>
+    </div>
+
+    <script src="app.js"></script>
+  </body>
+</html>
