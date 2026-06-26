@@ -10,6 +10,7 @@ __pycache__/
 #Logs
 *.log
 /app/data/api_logs.txt
+/data/api_logs.txt
 
 #OS generated files
 .DS_Store

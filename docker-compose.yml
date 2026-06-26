@@ -1,0 +1,31 @@
+version: "3.8"
+
+services:
+  backend:
+    build: ./app/backend # Tells Docker to read the backend/Dockerfile
+    ports:
+      - "8000:8000"
+    env_file:
+      - ./app/backend/.env # Injects your security VIP list
+    volumes:
+      - ./data:/data # Your log survival cable
+    healthcheck:
+      test:
+        [
+          "CMD",
+          "python",
+          "-c",
+          "import urllib.request; urllib.request.urlopen('http://localhost:8000/docs')",
+        ]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 5s
+
+  frontend:
+    build: ./app/frontend # Tells Docker to read your NEW frontend/Dockerfile
+    ports:
+      - "5500:80" # Maps your laptop's 5500 to the container's internal 80
+    depends_on:
+      backend:
+        condition: service_healthy
